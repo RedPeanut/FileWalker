@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>FileWalker</groupId>
+	<artifactId>FileWalker</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	
+	<properties>
+		<spring-framework.version>3.2.3.RELEASE</spring-framework.version>
+	</properties>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.4</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source/>
+					<target/>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
