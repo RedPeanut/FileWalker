@@ -39,4 +39,19 @@ public class StringUtil {
 		for (int i = 0; i < n; i++)
 			addCRLF(src);
 	}
+	
+	public static String fixNull(Object obj) {
+		return fixNull(obj, "");
+	}
+	
+	public static String fixNull(Object obj, String str) {
+		if(obj == null)
+			return str;
+		else if(obj.toString().toLowerCase().equals("null"))
+			return str;
+		else if(obj.toString().trim().length() == 0)
+			return str;
+		else
+			return obj.toString();
+	}
 }
