@@ -165,24 +165,24 @@ public class Oracle2Mysql implements IProcessor {
 			
 			int pos = 0; // root position
 			DefaultMutableTreeNode top = new DefaultMutableTreeNode(new UserObject(pos, -1));
-		    makeBracketPositionTree(top, text, pos);
-		    
-		    UserObject uo = (UserObject) ((DefaultMutableTreeNode) top.getChildAt(0)).getUserObject();
-		    int startPos = uo.getStartPos();
-		    int endPos = uo.getEndPos();
-		    
-		    String head = createStatement.substring(0, startPos - 1);
-		    String body = createStatement.substring(startPos, endPos + 1);
-		    String tail = createStatement.substring(endPos + 1, createStatement.length());
+			makeBracketPositionTree(top, text, pos);
+			
+			UserObject uo = (UserObject) ((DefaultMutableTreeNode) top.getChildAt(0)).getUserObject();
+			int startPos = uo.getStartPos();
+			int endPos = uo.getEndPos();
+			
+			String head = createStatement.substring(0, startPos - 1);
+			String body = createStatement.substring(startPos, endPos + 1);
+			String tail = createStatement.substring(endPos + 1, createStatement.length());
 
-		    //Log.d(TAG, "head = " + head);
-		    Log.d(TAG, "body = " + body);
-		    //Log.d(TAG, "tail = " + tail);
-		    
-		    Pattern subPattern = Pattern.compile("CREATE TABLE \"(\\w*)\"\\.\"(\\w*)\"");
-		    Matcher subMatcher = subPattern.matcher(head);
-		    while (subMatcher.find()) {
-		    	
+			//Log.d(TAG, "head = " + head);
+			Log.d(TAG, "body = " + body);
+			//Log.d(TAG, "tail = " + tail);
+			
+			Pattern subPattern = Pattern.compile("CREATE TABLE \"(\\w*)\"\\.\"(\\w*)\"");
+			Matcher subMatcher = subPattern.matcher(head);
+			while (subMatcher.find()) {
+				
 				//Util.printMatcher(subMatcher);
 				
 				String sid = subMatcher.group(1);
@@ -205,9 +205,9 @@ public class Oracle2Mysql implements IProcessor {
 					tableMap.put("BODY", body);
 					*/
 				}
-		    }
-		    
-		    
+			}
+			
+			
 		}
 	}
 	
@@ -281,8 +281,8 @@ public class Oracle2Mysql implements IProcessor {
 			String columnName = null;
 			
 			Pattern subPattern = Pattern.compile("COLUMN \"(\\w*)\"\\.\"(\\w*)\"\\.\"(\\w*)\"");
-		    Matcher subMatcher = subPattern.matcher(columnField);
-		    if (subMatcher.find()) {
+			Matcher subMatcher = subPattern.matcher(columnField);
+			if (subMatcher.find()) {
 				//Util.printMatcher(subMatcher);
 				
 				//String sid = matcher.group(1);
@@ -302,7 +302,7 @@ public class Oracle2Mysql implements IProcessor {
 						}
 					}
 				}
-		    }
+			}
 		}
 	}
 	

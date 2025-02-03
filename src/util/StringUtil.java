@@ -8,11 +8,11 @@ public class StringUtil {
 		char[] val = org.toCharArray();
 		
 		while ((st < len) && (val[st] == c)) {
-            st++;
-        }
-        while ((st < len) && (val[len - 1] == c)) {
-            len--;
-        }
+			st++;
+		}
+		while ((st < len) && (val[len - 1] == c)) {
+			len--;
+		}
 		
 		return ((st > 0) || (len < val.length)) ? org.substring(st, len) : org;
 	}
